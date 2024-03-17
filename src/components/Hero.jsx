@@ -1,24 +1,39 @@
 import React from 'react';
+import { AiOutlineSearch } from 'react-icons/ai';
+import beachVid from '../assets/beachVid.mp4';
 
 const Hero = () => {
   return (
-    <div className="max-w-[1640px] mx-auto p-4">
-      <div className="max-h-[500px] relative">
-        {/* Overlay */}
-        <div className="absolute w-full h-full text-gray-200 max-h-[500px] bg-black/40 flex flex-col justify-center">
-          <h1 className="px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
-            The <span className="text-orange-500">Best</span>
-          </h1>
-          <h1 className="px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
-            {' '}
-            <span className="text-orange-500">Foods</span> Devlivered
-          </h1>
-        </div>
-        <img
-          className="w-full max-h-[500px] object-cover"
-          src="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="/"
-        />
+    <div className='w-full h-screen relative'>
+      <video
+        className='w-full h-full object-cover'
+        src={beachVid}
+        autoPlay
+        loop
+        muted
+      />
+      <div className='absolute w-full h-full top-0 left-0 bg-gray-900/30'></div>
+      <div className='absolute top-0 w-full h-full flex flex-col justify-center text-center text-white p-4'>
+        <h1>First Class Travel</h1>
+        <h2 className='py-4'>Top 1% Locations Worldwide</h2>
+        <form
+          className='flex justify-between items-center max-w-[700px] mx-auto w-full border p-1
+          rounded-md text-black bg-gray-100/90'
+        >
+          <div>
+            <input
+              className='bg-transparent w-[300px] sm:w-[400px] font-[Poppins] focus:outline-none
+                  '
+              type='text'
+              placeholder='Search Destinations'
+            />
+          </div>
+          <div>
+            <button>
+              <AiOutlineSearch size={20} className='icon' style={{color: '#ffffff'}}  />
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
